@@ -1,6 +1,6 @@
 # Shopping Cart
 
-Live site:
+Live site: https://storeke.netlify.app/
 
 This project is a mock shopping cart application built with React with data fetched from FakeStoreAPI. It showcases essential React concepts such as component structuring, routing, state management, and testing.
 
