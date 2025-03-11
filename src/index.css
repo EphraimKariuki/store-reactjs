@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  column-gap: 50px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  width: 250px;
+  border: blue solid 2px;
+  justify-items: center;
+  border-radius: 20px;
+  padding: 10px;
+}
+.cardItem {
+  width: 230px;
+}
+.image {
+  width: 100px;
+}
+.cardQtyDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.qtyInput {
+  width: 50px;
+}
+.addToCardBtn {
+  
+}
