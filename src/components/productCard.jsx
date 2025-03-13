@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 // import "../index.css";
 
@@ -8,16 +8,19 @@ function ProductCard({product, onclickAddToCart}) {
   
   return (
        <div key={product.id} className='card' >
-            <img  className="image" src={product.image}/>
-            <h3 className='cardItem'>
-                {product.title}
-            </h3>
-           <p className="cardItem">
-             <strong>Price:</strong> $ {product.price}
-           </p>
-           <p  className="cardItem">
-                {product.description}
-           </p>
+           <div>
+              <img  className="image" src={product.image}/>
+                <h3 className='cardItem'>
+                    {product.title}
+                </h3>
+              <p className="cardItem">
+                <strong>Price:</strong> $ {product.price}
+              </p>
+              <p  className="cardItem">
+                    {product.description}
+              </p>
+           </div>
+           
            <div className='cardItem cardQtyDiv'>
                 <div>
                     <label>Qty: {""}</label>

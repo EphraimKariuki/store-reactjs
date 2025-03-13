@@ -4,12 +4,62 @@
   row-gap: 20px;
   flex-wrap: wrap;
 }
+header {
+  display: flex;
+  width: 1fr;
+  background-color: bisque;
+  justify-content: space-between;
+ 
+  
+}
+.navBar {
+  display: flex;
+  gap: 20px;
+  padding-right: 10px;
+ list-style-type: none;
+}
+
+.navBar a  {
+ background-color: aqua;
+  text-decoration: none;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  width: 100px;
+
+}
+.cartNavLink {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+ 
+}
+.cartNavLink div {
+  padding: 5px;
+}
+
+
+#cartQtyNavlink {
+  border: solid black 2px;
+
+}
+
+.main {
+  padding: 50px 30px;
+}
+
+
 .card {
   width: 250px;
   border: blue solid 2px;
   justify-items: center;
   border-radius: 20px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .cardItem {
   width: 230px;
@@ -20,6 +70,7 @@
 .cardQtyDiv {
   display: flex;
   justify-content: space-between;
+ 
 }
 .qtyInput {
   width: 50px;

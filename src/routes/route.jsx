@@ -2,6 +2,8 @@ import Home from "../pages/home";
 import Cart from "../pages/cart";
 import App from "../App"
 import { Children } from "react";
+
+
 const route = [
     {
         path: "/",
@@ -9,7 +11,7 @@ const route = [
         children: [
             {
                 path: "/",
-                element: <Home/>,
+                element: <Home />,
             },
             {
                 path: "/cart",
