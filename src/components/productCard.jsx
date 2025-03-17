@@ -1,10 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState, useEffect} from 'react';
+import ShopContext from '../Context';
 
 // import "../index.css";
 
+
 function ProductCard({product, onclickAddToCart}) {
+  const [isIncart, setIsIncart] = useState(false);
+  const [currentQty, setCurrerntQty] = useState(1)
   const qtyId = "qty" + product.id;
+
+  const {cartItems} = useContext(ShopContext);
+  
+  const findItemIncart = (items) => {
+    let cartItemsIDs = [];
+    cartItems.forEach((item) => {
+      cartItemsIDs.push(item.itemId)
+    });
+
+    return cartItemsIDs.includes(product.id);
+  }
+
+  useEffect(() =>{
+    setIsIncart(findItemIncart(cartItems));
+  },[cartItems]);
+ 
+  
+
+
   
   return (
        <div key={product.id} className='card' >
@@ -20,22 +43,35 @@ function ProductCard({product, onclickAddToCart}) {
                     {product.description}
               </p>
            </div>
+           {isIncart ?
+                  
+                    (<div className='cardItem cardQtyDiv'>
+                      <div>Cart Quantities : <strong>{currentQty}</strong></div>
+                      <button>Remove Cart</button>
+                    </div>)
+                   
+                  : 
+                    (<div className='cardItem cardQtyDiv'>
+                          <div>
+                              <label>Qty: {""}</label>
+                              <input 
+                                  id={qtyId}
+                                  type="number" 
+                                  className='qtyInput'
+                                  value ={currentQty}
+                                  min={1}
+                                  onChange={(e) => {setCurrerntQty(e.target.value)}}
+                              />
+                          </div>
+                          <button onClick={onclickAddToCart}>
+                              Add To Card
+                          </button>
+                              
+                    </div>)
+                  
+                  }
            
-           <div className='cardItem cardQtyDiv'>
-                <div>
-                    <label>Qty: {""}</label>
-                    <input 
-                        id={qtyId}
-                        type="number" 
-                        className='qtyInput'
-                        min={1}
-                    />
-                </div>
-                <button onClick={onclickAddToCart}>
-                    Add To Card
-                </button>
-                    
-           </div>
+           
            
         </div> 
      

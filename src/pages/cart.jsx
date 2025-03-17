@@ -29,8 +29,9 @@ function Cart() {
     <>
       <div className='cartTotals'>
         <p>Number Of Items <strong> {cartItems.length} </strong> </p>
-        <p>Total Amount <strong> {totalPrice} </strong> </p>
-        <button>Check Out</button>
+        <p>Total Amount <strong> $ {totalPrice} </strong> </p>
+        <button>Check Out</button> 
+        <button>Back To shop</button>
 
       </div>
       <div className='container'>
